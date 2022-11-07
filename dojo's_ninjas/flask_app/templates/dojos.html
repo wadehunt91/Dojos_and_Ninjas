@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Dojos</title>
+</head>
+<body>
+    <h1 class="display-1 text-center">List of Dojos</h1>
+        <div class="container">
+            <h3>All Dojos</h3>
+            <table class="table table-bordered">
+                <thead class="table-active">
+                    <th>Name</th>
+                </thead>
+                <tbody>
+                    {% for dojo in all_dojos %}
+                     <tr>
+                        <td><a href='/dojo/{{dojo.id}}'>{{dojo['name']}}</a></td>
+                     </tr>
+                     {% endfor %}
+                </tbody>
+            </table>
+            </div>
+            <h3 class="display-3 text-center">Add Dojo</h3>
+                    <div class="container d-flex justify-content-center">
+                        <form action="/addDojo" method="post">
+                            <label for="name" class="m-1">Name</label>
+                            <input type="text" placeholder="Dojo Name" style="display:block" name="name" class="m-1">
+                            <input type="submit" value="Add Dojo" class="m-1">
+                        </form>
+</body>
+</html>
